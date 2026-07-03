@@ -1,4 +1,6 @@
 local wezterm = require 'wezterm'
+local action = wezterm.action
+local workspacer = require 'plugins.workspacer'
 local map = function(key, mods, action)
     return {
         key = key,
@@ -13,18 +15,23 @@ end
 -- https://wezterm.org/config/keys.html#configuring-key-assignments
 --]]
 return {
-    map('H', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Left'),
-    map('J', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Down'),
-    map('K', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Up'),
-    map('L', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Right'),
-    map('Z', 'CMD|SHIFT', wezterm.action.TogglePaneZoomState),
-    map('0', 'CMD', wezterm.action.ShowLauncherArgs {
+    map('H', 'CMD|SHIFT', action.ActivatePaneDirection 'Left'),
+    map('J', 'CMD|SHIFT', action.ActivatePaneDirection 'Down'),
+    map('K', 'CMD|SHIFT', action.ActivatePaneDirection 'Up'),
+    map('L', 'CMD|SHIFT', action.ActivatePaneDirection 'Right'),
+    map('Z', 'CMD|SHIFT', action.TogglePaneZoomState),
+    map('0', 'CMD', action.ShowLauncherArgs {
         flags = 'FUZZY|WORKSPACES',
     }),
-    map('"', 'CMD|SHIFT', wezterm.action.SplitPane {
+    map('"', 'CMD|SHIFT', action.SplitPane {
         direction = 'Down',
     }),
-    map("'", 'CMD', wezterm.action.SplitPane {
+    map("'", 'CMD', action.SplitPane {
         direction = 'Right',
     }),
+    {
+        key = 'N',
+        mods = 'CMD|SHIFT',
+        action = workspacer
+    },
 }
