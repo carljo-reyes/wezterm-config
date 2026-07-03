@@ -20,6 +20,8 @@ end
 return {
     map("l", 'CMD', action.ClearScrollback 'ScrollbackAndViewport'),
     map("'", 'CMD', action.SplitVertical),
+    -- map('+', 'CMD', action.IncreaseFontSize),
+    -- map('-', 'CMD', action.DecreaseFontSize),
     map('"', 'CMD|SHIFT', action.SplitHorizontal),
     map('H', 'CMD|SHIFT', action.ActivatePaneDirection 'Left'),
     map('J', 'CMD|SHIFT', action.ActivatePaneDirection 'Down'),
