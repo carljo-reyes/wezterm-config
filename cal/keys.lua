@@ -1,55 +1,30 @@
 local wezterm = require 'wezterm'
+local map = function(key, mods, action)
+    return {
+        key = key,
+        mods = mods,
+        action = action
+    }
+end
+
 --[[
 -- references
 -- https://wezterm.org/config/keys.html
 -- https://wezterm.org/config/keys.html#configuring-key-assignments
 --]]
-
 return {
-    {
-        key = 'H',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.ActivatePaneDirection 'Left'
-    },
-    {
-        key = 'J',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.ActivatePaneDirection 'Down'
-    },
-    {
-        key = 'K',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.ActivatePaneDirection 'Up'
-    },
-    {
-        key = 'L',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.ActivatePaneDirection 'Right'
-    },
-    {
-        key = 'Z',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.TogglePaneZoomState
-    },
-    {
-        key = '9',
-        mods = 'ALT',
-        action = wezterm.action.ShowLauncherArgs {
-            flags = 'FUZZY|WORKSPACES',
-        },
-    },
-    {
-        key = '"',
-        mods = 'CMD|SHIFT',
-        action = wezterm.action.SplitPane {
-            direction = 'Down',
-        },
-    },
-    {
-        key = "'",
-        mods = 'CMD',
-        action = wezterm.action.SplitPane {
-            direction = 'Right',
-        },
-    },
+    map('H', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Left'),
+    map('J', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Down'),
+    map('K', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Up'),
+    map('L', 'CMD|SHIFT', wezterm.action.ActivatePaneDirection 'Right'),
+    map('Z', 'CMD|SHIFT', wezterm.action.TogglePaneZoomState),
+    map('0', 'CMD', wezterm.action.ShowLauncherArgs {
+        flags = 'FUZZY|WORKSPACES',
+    }),
+    map('"', 'CMD|SHIFT', wezterm.action.SplitPane {
+        direction = 'Down',
+    }),
+    map("'", 'CMD', wezterm.action.SplitPane {
+        direction = 'Right',
+    }),
 }
