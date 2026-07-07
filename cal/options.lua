@@ -1,9 +1,13 @@
+local wezterm = require('wezterm')
+
 local apply = function(config)
     config.adjust_window_size_when_changing_font_size = false
     config.automatically_reload_config = true
+    config.font = wezterm.font 'FiraMono Nerd Font Propo'
     config.font_size = 16
     config.initial_cols = 130
     config.initial_rows = 40
+    config.line_height = 1.13
     config.tab_max_width = 30
     config.use_fancy_tab_bar = false
     config.window_background_opacity = 1

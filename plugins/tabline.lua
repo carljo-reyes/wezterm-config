@@ -60,7 +60,7 @@ local apply = function(config)
                 },
             },
             tabline_x = {},
-            tabline_y = {},
+            tabline_y = { 'workspace' },
             tabline_z = { 
                 { 'domain', fmt = tab } 
             },
