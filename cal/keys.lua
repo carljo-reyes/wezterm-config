@@ -20,6 +20,7 @@ end
 return {
 	map("l", "CMD", action.ClearScrollback("ScrollbackAndViewport")),
 	map("'", "CMD", action.SplitVertical),
+	map("Enter", "CMD", action.ToggleFullScreen),
 	-- map('+', 'CMD', action.IncreaseFontSize),
 	-- map('-', 'CMD', action.DecreaseFontSize),
 	map('"', "CMD|SHIFT", action.SplitHorizontal),
