@@ -18,25 +18,25 @@ end
 -- https://wezterm.org/config/lua/keyassignment/index.html
 --]]
 return {
+	map("Enter", "CMD", action.ToggleFullScreen),
 	map("l", "CMD", action.ClearScrollback("ScrollbackAndViewport")),
 	map("'", "CMD", action.SplitVertical),
-	map("Enter", "CMD", action.ToggleFullScreen),
-	-- map('+', 'CMD', action.IncreaseFontSize),
-	-- map('-', 'CMD', action.DecreaseFontSize),
 	map('"', "CMD|SHIFT", action.SplitHorizontal),
 	map("H", "CMD|SHIFT", action.ActivatePaneDirection("Left")),
 	map("J", "CMD|SHIFT", action.ActivatePaneDirection("Down")),
 	map("K", "CMD|SHIFT", action.ActivatePaneDirection("Up")),
 	map("L", "CMD|SHIFT", action.ActivatePaneDirection("Right")),
 	map("R", "CMD|SHIFT", action.ReloadConfiguration),
+	map("f", "CMD", action.Search({ CaseInSensitiveString = "" })),
 	map("h", "CMD", action.ActivatePaneDirection("Left")),
 	map("j", "CMD", action.ActivatePaneDirection("Down")),
 	map("k", "CMD", action.ActivatePaneDirection("Up")),
 	map("l", "CMD", action.ActivatePaneDirection("Right")),
-	map("f", "CMD", action.Search({ CaseInSensitiveString = "" })),
-	map("Z", "CMD|SHIFT", action.TogglePaneZoomState),
+	map("n", "CMD", action.SpawnTab("CurrentPaneDomain")),
+	map("z", "CMD", action.TogglePaneZoomState),
 	map("I", "CMD|SHIFT", action.ActivateTabRelative(-1)),
 	map("O", "CMD|SHIFT", action.ActivateTabRelative(1)),
+	map("N", "CMD|SHIFT", action.SpawnWindow),
 	map(
 		"U",
 		"CMD|SHIFT",
@@ -44,6 +44,9 @@ return {
 			flags = "FUZZY|WORKSPACES",
 		})
 	),
+	map("[", "CMD|SHIFT", action.SwitchWorkspaceRelative(-1)),
+	map("]", "CMD|SHIFT", action.SwitchWorkspaceRelative(1)),
+
 	map("|", "CMD|SHIFT", action.SwitchWorkspaceRelative(-1)),
 	map("\\", "CMD", action.SwitchWorkspaceRelative(1)),
 	map("o", "CMD", workspacer),

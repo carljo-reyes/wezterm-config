@@ -13,6 +13,18 @@ local apply = function(config)
     config.window_background_opacity = 1
     -- config.window_background_opacity = 0.95
     config.show_new_tab_button_in_tab_bar = false
+    config.window_frame = {
+        border_left_width = '5',
+        border_right_width = '5',
+        border_left_color = 'orange',
+        border_right_color = 'orange',
+    }
+    config.window_padding = {
+        left = 10,
+        right = 10,
+        top = 0,
+        bottom = 0,
+    }
 
     -- config.window_decorations = "RESIZE"
 end
