@@ -18,7 +18,7 @@ end
 -- https://wezterm.org/config/lua/keyassignment/index.html
 --]]
 return {
-	map("Enter", "CMD", action.ToggleFullScreen),
+	-- map("Enter", "CMD", action.ToggleFullScreen), -- removed from Mac in favor of Zoom
 	map("l", "CMD", action.ClearScrollback("ScrollbackAndViewport")),
 	map("'", "CMD", action.SplitVertical),
 	map('"', "CMD|SHIFT", action.SplitHorizontal),
