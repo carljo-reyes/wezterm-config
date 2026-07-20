@@ -31,10 +31,10 @@ return {
 	map("k", "CMD", action.ActivatePaneDirection("Up")),
 	map("l", "CMD", action.ActivatePaneDirection("Right")),
 
-	map("H", "CMD|SHIFT", action.ActivateTabRelative(1)),
+	map("H", "CMD|SHIFT", action.ActivateTabRelative(-1)),
 	map("J", "CMD|SHIFT", action.SwitchWorkspaceRelative(1)),
 	map("K", "CMD|SHIFT", action.SwitchWorkspaceRelative(-1)),
-	map("L", "CMD|SHIFT", action.ActivateTabRelative(-1)),
+	map("L", "CMD|SHIFT", action.ActivateTabRelative(1)),
 
 	map("R", "CMD|SHIFT", action.ReloadConfiguration),
 	map("I", "CMD|SHIFT", action.ActivateTabRelative(-1)),
